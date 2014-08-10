@@ -46,7 +46,7 @@ module.exports = (env) ->
 
       for Cl in deviceClasses
         do (Cl) =>
-          @framework.registerDeviceClass(Cl.name, {
+          @framework.deviceManager.registerDeviceClass(Cl.name, {
             configDef: deviceConfigDef[Cl.name]
             createCallback: (deviceConfig) => 
               device = new Cl(deviceConfig, @isDemo)
